@@ -1,0 +1,50 @@
+---
+# These are optional metadata elements. Feel free to remove any of them.
+status: "{proposed | rejected | accepted | deprecated | … | superseded by ADR-0123"
+date: {YYYY-MM-DD when the decision was last updated}
+decision-makers: {list everyone involved in the decision}
+consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
+informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
+---
+
+# {short title, representative of solved problem and found solution}
+
+## Context and Problem Statement
+
+Para la nueva arquitectura basada en microservicios de la compañía de productos alimenticios, es necesario implementar funcionalidades básicas de autenticación y registro para clientes. Esto permite controlar el acceso a los servicios personalizados, como la creación y consulta de pedidos y el historial de compras.
+
+## Decision Drivers
+
+* Necesidad de garantizar seguridad y privacidad en el acceso de los datos de clientes.
+* Escalabilidad y eficiencia en la gestión de usuarios y sus sesiones.
+* Se necesita para interactuar con otras partes del servicio, como los pedidos y pagos.
+
+## Considered Options
+
+* Implementar autenticación básica mediante usuario y contraseña con almacenamiento en base de datos SQL.
+* Implementar autenticación usando un servicio externo de autenticación.
+
+## Decision Outcome
+
+Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+
+### Consequences
+
+* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
+* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
+
+### Confirmation
+
+La implementación será confirmada mediante pruebas de integración y revisión de código para asegurar el cumplimiento de los requisitos de autenticación y seguridad.
+
+## Pros and Cons of the Options
+
+### Autenticación básica en base de datos SQL
+
+* Good, porque es fácil de implementar y comprender.
+* Bad, porque no es la opción más segura entre otras alternativas.
+
+### Servicio externo de autenticación
+
+* Good, porque externaliza la complejidad de la autenticación.
+* Bad, porque introduce dependencia de un proveedor externo y costos adicionales.
