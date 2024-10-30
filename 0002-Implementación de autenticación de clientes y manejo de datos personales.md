@@ -13,9 +13,12 @@ Para la nueva arquitectura basada en microservicios de la compañía de producto
 
 ## Decision Drivers
 
-* Necesidad de garantizar seguridad y confidencialidad en el acceso y modificación de los datos personales de los usuarios.
-* Escalabilidad y eficiencia en la gestión de usuarios, sus datos y sus sesiones.
-* La funcionalidad de autenticación y de gestión de datos es fundamental para integrar los servicios personalizados, como la creación y consulta de pedidos, el historial de compras y la asistencia al cliente.
+* RF-1: Iniciar sesión.
+* RF-2: Registrarse.
+* RF-3: Uso de datos personales de los clientes
+* RF-3.1: Acceder datos personales de los clientes.
+* RF-3.2: Modificar datos personales de los clientes.
+
 
 ## Considered Options
 
@@ -28,8 +31,8 @@ Chosen option: 0003-1-Sistema de permisos basado en roles, because proporciona f
 
 ### Consequences
 
-* Good, porque simplifica la gestión de permisos de acceso y modificación, facilitando el cumplimiento de las políticas de privacidad.
-* Bad, porque podría limitar la flexibilidad en configuraciones personalizadas de permisos específicos para cada rol.
+* Good, because simplifica la gestión de permisos de acceso y modificación, facilitando el cumplimiento de las políticas de privacidad.
+* Bad, because podría limitar la flexibilidad en configuraciones personalizadas de permisos específicos para cada rol.
 
 ### Confirmation
 
@@ -39,14 +42,18 @@ La implementación será confirmada mediante pruebas de integración y revisión
 
 ### 0003-1-Sistema de permisos basado en roles
 
-* Good, porque facilita la organización y revisión de permisos de manera escalable y centralizada.
-* Good, porque permite una gestión simplificada de los permisos al asignarlos a grupos de usuarios específicos.
-* Bad, porque requiere mantener roles actualizados con cambios en las políticas de la compañía.
-* Bad, porque podría limitar la capacidad de personalizar permisos a nivel individual.
+* Good, because facilita la organización y revisión de permisos de manera escalable y centralizada.
+* Good, because permite una gestión simplificada de los permisos al asignarlos a grupos de usuarios específicos.
+* Bad, because requiere mantener roles actualizados con cambios en las políticas de la compañía.
+* Bad, because podría limitar la capacidad de personalizar permisos a nivel individual.
 
 ### 0003-2-Control de acceso mediante permisos asignados en la base de datos
 
-* Good, porque permite un control directo desde la base de datos y centraliza la asignación de permisos en un solo lugar.
-* Good, porque centralizar los permisos en una base de datos facilita el seguimiento de accesos.
-* Bad, porque podría añadir dependencia en la base de datos para la administración de permisos y carece de flexibilidad para configuraciones dinámicas o de permisos por servicio.
-* Bad, porque podría ser menos eficiente si se requieren consultas frecuentes a la base de datos para verificar permisos en cada solicitud.
+* Good, because permite un control directo desde la base de datos y centraliza la asignación de permisos en un solo lugar.
+* Good, because centralizar los permisos en una base de datos facilita el seguimiento de accesos.
+* Bad, because podría añadir dependencia en la base de datos para la administración de permisos y carece de flexibilidad para configuraciones dinámicas o de permisos por servicio.
+* Bad, because podría ser menos eficiente si se requieren consultas frecuentes a la base de datos para verificar permisos en cada solicitud.
+
+## More Information
+
+Para una mayor definición de las acciones que se llevaran a cabo en esta base de datos es necesario entender que aquí se guardarán todos los datos de los clientes, empleados y administradores, siendo diferenciados por una extensión en sus nombres después del símbolo @. A la hora de las funciones todas estas las pueden llevan a cabo cada uno de los tipos de usuarios pero el hecho de modificar datos personales de otras cuentas esta solo permitido para administradores.
