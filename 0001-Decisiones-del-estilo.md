@@ -1,6 +1,6 @@
 ---
-status: {proposed}
-date: {2024-10-29}
+status: {accepted}
+date: {2024-10-31}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
