@@ -22,8 +22,8 @@ Para la nueva arquitectura basada en microservicios de la compañía de producto
 
 ## Considered Options
 
-* 0003-1-Implementar un sistema de permisos basado en roles, con acceso y modificación de datos permitidos solo a los roles designados.
-* 0003-2-Control de acceso mediante permisos asignados en la base de datos.
+* 0002-1-Implementar un sistema de permisos basado en roles, con acceso y modificación de datos permitidos solo a los roles designados.
+* 0002-2-Control de acceso mediante permisos asignados en la base de datos.
 
 ## Decision Outcome
 
@@ -40,14 +40,14 @@ La implementación será confirmada mediante pruebas de integración y revisión
 
 ## Pros and Cons of the Options
 
-### 0003-1-Sistema de permisos basado en roles
+### 0002-1-Sistema de permisos basado en roles
 
 * Good, because facilita la organización y revisión de permisos de manera escalable y centralizada.
 * Good, because permite una gestión simplificada de los permisos al asignarlos a grupos de usuarios específicos.
 * Bad, because requiere mantener roles actualizados con cambios en las políticas de la compañía.
 * Bad, because podría limitar la capacidad de personalizar permisos a nivel individual.
 
-### 0003-2-Control de acceso mediante permisos asignados en la base de datos
+### 0002-2-Control de acceso mediante permisos asignados en la base de datos
 
 * Good, because permite un control directo desde la base de datos y centraliza la asignación de permisos en un solo lugar.
 * Good, because centralizar los permisos en una base de datos facilita el seguimiento de accesos.
