@@ -27,7 +27,7 @@ Para la nueva arquitectura basada en microservicios de la compañía de producto
 
 ## Decision Outcome
 
-Chosen option: 0003-1-Sistema de permisos basado en roles, because proporciona flexibilidad para gestionar acceso en función de rol, simplifica la administración de permisos y se alinea con los requisitos de seguridad.
+Chosen option: 0002-1-Sistema de permisos basado en roles, because proporciona flexibilidad para gestionar acceso en función de rol, simplifica la administración de permisos y se alinea con los requisitos de seguridad.
 
 ### Consequences
 
