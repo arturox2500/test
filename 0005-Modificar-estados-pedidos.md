@@ -128,6 +128,7 @@ Rigidez: Una FSM puede ser difícil de cambiar o extender si el flujo se vuelve 
 Escalabilidad limitada: No es ideal si hay muchas variaciones en el flujo, ya que agregar nuevos estados o transiciones puede complicar la FSM.
 
 * Resumen Comparativo
+
 -Observer: Ideal para notificar cambios sin acoplamiento; útil en sistemas que requieren actualizaciones automáticas de otras partes.
 
 -Base de Datos para Persistencia: Asegura que los estados y su historial estén disponibles para auditoría y recuperación; ideal para trazabilidad, pero tiene un coste de rendimiento.
