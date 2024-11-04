@@ -77,34 +77,42 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 <!--Chat gpt-->
 ## More Information
 
-Aquí tienes un resumen explicativo y comparativo de las tres opciones: patrón Observer, base de datos para la persistencia de estados y máquina de estados finita, enfocadas en la gestión de estados de un pedido.
+Resumen explicativo y comparativo de las tres opciones: patrón Observer, base de datos para la persistencia de estados y máquina de estados finita, enfocadas en la gestión de estados de un pedido.
 
 1. Patrón Observer
 Qué es: En este patrón, un objeto central (por ejemplo, el pedido) notifica automáticamente a otros objetos (observadores) cuando su estado cambia. Los observadores pueden ser otros componentes interesados en los cambios de estado, como un módulo de notificaciones o de estadísticas.
-Pros:
+-Pros:
 Desacoplamiento: Los observadores no dependen directamente del pedido, lo que permite agregar o modificar funcionalidades sin afectar al código principal.
+
 Extensibilidad: Es fácil añadir nuevos observadores sin cambiar la lógica central.
-Contras:
+-Contras:
 Complejidad: Con muchos observadores, el seguimiento y manejo de notificaciones puede complicarse.
+
 Carga: Si los cambios de estado son frecuentes y hay muchos observadores, puede afectar al rendimiento.
 2. Base de Datos para la Persistencia de Estados
 Qué es: Cada cambio de estado del pedido se guarda en una base de datos. Esto permite registrar el estado actual y el historial completo de transiciones para futuras consultas o auditorías.
-Pros:
+-Pros:
 Persistencia: El historial de estados se mantiene almacenado, permitiendo un análisis posterior.
+
 Resiliencia: En caso de caída del sistema, el estado actual y el historial están guardados y pueden recuperarse fácilmente.
-Contras:
+-Contras:
 Complejidad de transacciones: Es necesario asegurarse de que los cambios de estado se guarden correctamente, especialmente en sistemas distribuidos.
+
 Rendimiento: Cada cambio de estado requiere una escritura en la base de datos, lo que puede ralentizar el sistema si hay muchos cambios frecuentes.
 3. Máquina de Estados Finita (FSM)
 Qué es: Es una estructura que define un conjunto de estados finitos y las transiciones posibles entre ellos. En este caso, el pedido podría pasar por estados como "creado", "preprocesado", "autorizado", etc., siguiendo un flujo predefinido.
-Pros:
+-Pros:
 Control claro: Las reglas de transición entre estados están claramente definidas, minimizando errores y manteniendo un flujo lógico.
+
 Simplicidad en el flujo: Muy útil para sistemas que requieren una secuencia de estados predecible.
-Contras:
+-Contras:
 Rigidez: Una FSM puede ser difícil de cambiar o extender si el flujo se vuelve más complejo.
+
 Escalabilidad limitada: No es ideal si hay muchas variaciones en el flujo, ya que agregar nuevos estados o transiciones puede complicar la FSM.
-Resumen Comparativo
+
+* -Resumen Comparativo
 Observer: Ideal para notificar cambios sin acoplamiento; útil en sistemas que requieren actualizaciones automáticas de otras partes.
+
 Base de Datos para Persistencia: Asegura que los estados y su historial estén disponibles para auditoría y recuperación; ideal para trazabilidad, pero tiene un coste de rendimiento.
+
 FSM: Proporciona una estructura clara para flujos predefinidos y secuenciales; excelente para control, pero menos flexible y escalable para flujos complejos.
-Cada opción tiene fortalezas en situaciones específicas, y la elección dependerá de los requisitos exactos del sistema, como la necesidad de trazabilidad, control de flujo o escalabilidad.
