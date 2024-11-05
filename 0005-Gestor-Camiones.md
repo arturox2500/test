@@ -1,6 +1,6 @@
 ---
 status: {proposed}
-date: {2024-11-4}
+date: {2024-11-05}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
@@ -20,8 +20,6 @@ El problema resuelto a continuación abarca la gestión de que camiones van a en
 
 * 0005-1-Algoritmo heurístico
 * 0005-2-Algoritmo de programación lineal
-* {title of option 3}
-* … <!-- numbers of options can vary -->
 
 ## Decision Outcome
 
@@ -67,7 +65,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 <!-- This is an optional element. Feel free to remove. -->
 ## More Information
 
-* Opción 1: Microservicio de Asignación de Camiones basado en Algoritmos de Optimización Heurística
+### Opción 1: Microservicio de Asignación de Camiones basado en Algoritmos de Optimización Heurística
 
 En esta solución, se implementa un microservicio que emplea algoritmos de optimización heurística para asignar cada camión a una ruta en función de ciertos criterios predefinidos, como la proximidad, la capacidad de carga y la urgencia de entrega.
 
@@ -77,16 +75,16 @@ Distancia al punto de partida de la ruta: Asigna el camión más cercano para re
 Capacidad del camión: Solo asigna rutas que respeten la capacidad de carga del camión.
 Nivel de urgencia de la entrega: Rutas con alta prioridad o demoras se asignan a camiones disponibles inmediatamente.
 
--Ventajas:
+- Ventajas:
 
 Este enfoque es flexible y se adapta a condiciones cambiantes (ej., diferentes ubicaciones de camiones y rutas a lo largo del día).
 La implementación de heurísticas permite soluciones rápidas y suficientemente optimizadas sin necesidad de alta capacidad computacional.
 
--Desventajas:
+- Desventajas:
 
 La solución heurística puede no siempre dar la asignación óptima en todos los casos, pero debería ser adecuada para la mayoría de las operaciones cotidianas.
 
-* Opción 2: Microservicio de Asignación de Camiones con un Sistema de Optimización Basado en Programación Lineal
+### Opción 2: Microservicio de Asignación de Camiones con un Sistema de Optimización Basado en Programación Lineal
 
 Esta opción utiliza un enfoque de programación lineal, ideal para problemas de asignación en los que se busca minimizar un coste objetivo, como el tiempo o el coste de transporte.
 
@@ -98,12 +96,12 @@ Esta opción utiliza un enfoque de programación lineal, ideal para problemas de
 
     --Función objetivo: Minimizar el coste total de asignación o maximizar la puntualidad de entregas, priorizando rutas con mayor urgencia.
 
--Ventajas:
+- Ventajas:
 
 Proporciona una solución optimizada y generalmente exacta.
 Puede ser ajustado para cumplir diferentes objetivos (minimizar coste, maximizar eficiencia, reducir tiempos de entrega).
 
--Desventajas:
+- Desventajas:
 
 La programación lineal requiere mayor capacidad computacional, especialmente con gran número de rutas y camiones.
 Puede ser menos flexible en condiciones de alta variabilidad si no se ajusta frecuentemente el modelo.
