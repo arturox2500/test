@@ -1,26 +1,26 @@
 ---
 status: {proposed}
-date: {2024-11-4}
+date: {2024-11-05}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Modificar los estados de un pedido.
+# Gestionar los diferentes estados de un pedido.
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story. You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+El problema que se quiere resolver es el como administrar los diferentes estados en los que puede estar un pedido, siendo estos intento, pedido, autorización y aceptación.
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
 
-* RF-6: Controlar los diferentes estados en los que puede estar un pedido.
+* RF-3: Gestión de pedidos por fases
 
 ## Considered Options
 
-* 0005-1 Patrón observer.
-* 0005-2 Usar la BBDD para la persistencia de los estados.
-* 0005-3 Maquina de estados finita.
+* 0003-1 Patrón Observer.
+* 0003-2 Usar la BBDD para la persistencia de los estados.
+* 0003-3 Patrón State.
 
 ## Decision Outcome
 
@@ -41,7 +41,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 <!-- This is an optional element. Feel free to remove. -->
 ## Pros and Cons of the Options
 
-### 0005-1 Patrón observer.
+### 0003-1 Patrón observer.
 
 <!-- This is an optional element. Feel free to remove. -->
 {example | description | pointer to more information | …}
@@ -53,7 +53,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 * Bad, because {argument d}
 * … <!-- numbers of pros and cons can vary -->
 
-### 0005-2 Usar la BBDD para la persistencia de los estados.
+### 0003-2 Usar la BBDD para la persistencia de los estados.
 
 {example | description | pointer to more information | …}
 
@@ -63,7 +63,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 * Bad, because {argument d}
 * …
 
-### 0005-3 Maquina de estados finita.
+### 0003-3 Patrón State.
 
 {example | description | pointer to more information | …}
 
@@ -111,21 +111,25 @@ Complejidad de transacciones: Es necesario asegurarse de que los cambios de esta
 
 Rendimiento: Cada cambio de estado requiere una escritura en la base de datos, lo que puede ralentizar el sistema si hay muchos cambios frecuentes.
 
-* 3.- Máquina de Estados Finita (FSM)
+* 3.- Patrón State:
 
-Qué es: Es una estructura que define un conjunto de estados finitos y las transiciones posibles entre ellos. En este caso, el pedido podría pasar por estados como "creado", "preprocesado", "autorizado", etc., siguiendo un flujo predefinido.
+Qué es: State es un patrón de diseño de comportamiento que permite a un objeto alterar su comportamiento cuando su estado interno cambia. Parece como si el objeto cambiara su clase. El patrón State está estrechamente relacionado con el concepto de la Máquina de estados finitos.
 
 -Pros:
 
-Control claro: Las reglas de transición entre estados están claramente definidas, minimizando errores y manteniendo un flujo lógico.
+Organización y Mantenibilidad: Cada estado tiene su propia clase, lo que organiza el código al encapsular la lógica de cada estado de manera separada. / Al separar la lógica por estado, el código es más fácil de entender, mantener y extender. Es sencillo modificar un estado sin afectar a los demás.
 
-Simplicidad en el flujo: Muy útil para sistemas que requieren una secuencia de estados predecible.
+Facilita la Adición de Nuevos Estados o Transiciones: Para añadir un nuevo estado, solo es necesario crear una nueva clase que implemente la lógica de ese estado, sin tener que modificar el código existente. / Si en el futuro se requiere un nuevo estado en el flujo de un pedido, este patrón permite incluirlo con cambios mínimos en el código actual.
+
+Flexibilidad en el Comportamiento Dinámico: El objeto puede cambiar de estado en tiempo de ejecución, y cada estado puede tener su propio comportamiento específico, facilitando la adaptación a distintas condiciones y reglas de negocio en tiempo real. / Esto permite una gran flexibilidad si el comportamiento del sistema cambia en función del estado actual.
+
+Soporte para Extensiones de los Estados: Si los estados requieren acciones específicas adicionales (por ejemplo, notificaciones o validaciones), estas pueden implementarse directamente en la clase correspondiente al estado sin afectar el resto del sistema.
 
 -Contras:
 
-Rigidez: Una FSM puede ser difícil de cambiar o extender si el flujo se vuelve más complejo.
+Mayor Complejidad en la Estructura de Clases: Implementar el patrón State requiere crear una clase para cada estado, lo que puede incrementar significativamente el número de clases. / En sistemas grandes o con muchos estados, la gestión de clases adicionales puede volverse difícil y llevar a una estructura de código más compleja.
 
-Escalabilidad limitada: No es ideal si hay muchas variaciones en el flujo, ya que agregar nuevos estados o transiciones puede complicar la FSM.
+Mayor Costo en Términos de Memoria y Rendimiento: Crear y mantener instancias de varias clases de estado puede aumentar el uso de memoria y reducir el rendimiento si el sistema gestiona un alto volumen de pedidos o cambios de estado. / Esto puede no ser un problema significativo en sistemas de baja concurrencia, pero podría volverse un inconveniente en sistemas de alta concurrencia.
 
 * Resumen Comparativo
 
@@ -133,4 +137,4 @@ Escalabilidad limitada: No es ideal si hay muchas variaciones en el flujo, ya qu
 
 -Base de Datos para Persistencia: Asegura que los estados y su historial estén disponibles para auditoría y recuperación; ideal para trazabilidad, pero tiene un coste de rendimiento.
 
--FSM: Proporciona una estructura clara para flujos predefinidos y secuenciales; excelente para control, pero menos flexible y escalable para flujos complejos.
+-El patrón State: Es una excelente opción si el sistema tiene estados bien definidos y el flujo es predecible, ofreciendo una buena organización y encapsulamiento de la lógica de estados. Sin embargo, si el flujo es demasiado dinámico o los estados comparten mucha lógica, puede introducir una complejidad innecesaria y sobrecargar el sistema en términos de clases y mantenimiento.
