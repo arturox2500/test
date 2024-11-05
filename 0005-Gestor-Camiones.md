@@ -71,9 +71,11 @@ En esta solución, se implementa un microservicio que emplea algoritmos de optim
 
 - Descripción: El microservicio toma como entrada la lista de camiones disponibles y las rutas pendientes de asignación. Usando un algoritmo de heurística, como el Algoritmo de Vecino Más Cercano o una variante de Algoritmo Genético, calcula la asignación óptima de camión-ruta considerando factores como:
 
-Distancia al punto de partida de la ruta: Asigna el camión más cercano para reducir el tiempo y el coste de transporte.
-Capacidad del camión: Solo asigna rutas que respeten la capacidad de carga del camión.
-Nivel de urgencia de la entrega: Rutas con alta prioridad o demoras se asignan a camiones disponibles inmediatamente.
+    --Distancia al punto de partida de la ruta: Asigna el camión más cercano para reducir el tiempo y el coste de transporte.
+
+    --Capacidad del camión: Solo asigna rutas que respeten la capacidad de carga del camión.
+
+    --Nivel de urgencia de la entrega: Rutas con alta prioridad o demoras se asignan a camiones disponibles inmediatamente.
 
 - Ventajas:
 
