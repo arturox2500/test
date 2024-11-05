@@ -59,6 +59,9 @@ Se propone implementar el patrón Observer para monitorear las rutas de reparto 
 * Bad, because puede aumentar la complejidad del sistema al manejar múltiples observadores y notificaciones, lo que podría impactar el rendimiento si no se gestiona correctamente.
 
 ## More Information
+
+El patron dependeria en el caso de que el cambio de algoritmo pueda ser a medio camino, o si solo es antes de que empiece el recorrido.
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
