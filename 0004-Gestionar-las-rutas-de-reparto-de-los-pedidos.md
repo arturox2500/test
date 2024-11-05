@@ -61,6 +61,7 @@ Se propone implementar el patrón Observer para monitorear las rutas de reparto 
 ## More Information
 
 El patron dependeria en el caso de que el cambio de algoritmo pueda ser a medio camino, o si solo es antes de que empiece el recorrido.
+Ademas debido a que las estadisticas deben ser a tiempo real es importante que el patron mas conveniente sea el observer (Convendria separar mejor el requisito 6 para poder añadirlo a los decision drivers)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
