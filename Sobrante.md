@@ -23,7 +23,7 @@ El sistema debe permitir que el cliente haga o encargue pedidos de productos de 
 
 ## Decision Outcome
 
-Chosen option: 0003-1 - Implementación en la interfaz de usuario con flujo guiado, porque proporciona una experiencia directa y sencilla para el cliente en la plataforma.
+Chosen option: 0004-1 - Implementación en la interfaz de usuario con flujo guiado, because proporciona una experiencia directa y sencilla para el cliente en la plataforma.
 
 ### Consequences
 
