@@ -18,8 +18,8 @@ El sistema debe permitir que el cliente haga o encargue pedidos de productos de 
 
 ## Considered Options
 
-* 0004-1: Implementar la funcionalidad de pedidos de productos mediante un flujo en la interfaz de usuario que guíe al cliente a través del proceso de autenticación, selección de productos, y pago.
-* 0004-2: Implementar la funcionalidad de pedidos de productos mediante una API externa que permita integraciones con otras plataformas, facilitando pedidos a través de distintos canales.
+* 0003-1: Implementar la funcionalidad de pedidos de productos mediante un flujo en la interfaz de usuario que guíe al cliente a través del proceso de autenticación, selección de productos, y pago.
+* 0003-2: Implementar la funcionalidad de pedidos de productos mediante una API externa que permita integraciones con otras plataformas, facilitando pedidos a través de distintos canales.
 
 ## Decision Outcome
 
@@ -36,13 +36,13 @@ La implementación se confirmará mediante pruebas de funcionalidad y usabilidad
 
 ## Pros and Cons of the Options
 
-### 0004-1 - Implementación en la interfaz de usuario con flujo guiado
+### 0003-1 - Implementación en la interfaz de usuario con flujo guiado
 
 * Good, because facilita la navegación y seguimiento del proceso de compra para los usuarios dentro de la misma plataforma.
 * Good, because permite una mayor personalización del flujo de pedidos, ajustándose a las necesidades de los clientes de la compañía.
 * Bad, because la falta de integración con otras plataformas limita el alcance de pedidos a la interfaz de la plataforma.
 
-### 0004-2 - Implementación mediante una API externa
+### 0003-2 - Implementación mediante una API externa
 
 * Good, because facilita la integración con otras plataformas, lo que permite realizar pedidos desde múltiples canales.
 * Good, because aumenta la flexibilidad del sistema al permitir extensiones en el futuro para nuevos tipos de plataformas.
