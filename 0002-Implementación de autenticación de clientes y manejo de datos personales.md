@@ -1,56 +1,57 @@
 ---
-status: {accepted}
+status: {pending}
 date: {2024-10-31}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 --- 
 
-# Acceso a la base de datos
+# Gestión de las Bases de Datos
 
 ## Context and Problem Statement
 
-Para la nueva arquitectura basada en microservicios de la compañía de productos alimenticios, es necesario implementar funcionalidades básicas de autenticación, registro y gestión de datos personales para todos los roles involucrados (clientes, empleados y administradores). Esto permitirá un acceso seguro a la información personalizada, y garantizará la integridad de los datos de los usuarios.
+El sistema requiere un componente de gestión de bases de datos que permita acceder, almacenar y sincronizar la información de las bases de datos SQL de Clientes y Pedidos. Este componente debe ser flexible, escalable y compatible con una arquitectura de microservicios.
 
 ## Decision Drivers
 
 * RF-2: Gestor de base de datos.
-* RD-1: Uso de las 2 BBDD SQL.
 
 
 ## Considered Options
 
-* 0002-1-Implementar un sistema de permisos basado en roles, con acceso y modificación de datos permitidos solo a los roles designados.
-* 0002-2-Control de acceso mediante permisos asignados en la base de datos.
+* 0002-1: Utilizar Amazon RDS Data API para gestionar el acceso y control de bases de datos SQL de manera segura y escalable en la nube de AWS.
+* 0002-2: Implementar Google Cloud SQL API para la administración y acceso a bases de datos SQL con capacidades nativas de Google Cloud.
+* 0002-3: Usar ODBC como una solución multiplataforma que facilite la interoperabilidad entre diferentes entornos y bases de datos SQL.
 
 ## Decision Outcome
 
-Chosen option: 0002-1-Sistema de permisos basado en roles, because proporciona flexibilidad para gestionar acceso en función de rol, simplifica la administración de permisos y se alinea con los requisitos de seguridad.
+
 
 ### Consequences
 
-* Good, because simplifica la gestión de permisos de acceso y modificación, facilitando el cumplimiento de las políticas de privacidad.
-* Bad, because podría limitar la flexibilidad en configuraciones personalizadas de permisos específicos para cada rol.
+
 
 ### Confirmation
 
-La implementación será confirmada mediante pruebas de integración y revisión de código para asegurar el cumplimiento de los requisitos de autenticación y seguridad.
+La elección se confirmará mediante pruebas de conectividad, rendimiento y escalabilidad, asegurando que el acceso a las bases de datos sea eficiente y cumpla con los requisitos de la aplicación.
 
 ## Pros and Cons of the Options
 
-### 0002-1-Sistema de permisos basado en roles
+### 0002-1 - Amazon RDS Data API
 
-* Good, because facilita la organización y revisión de permisos de manera escalable y centralizada.
-* Good, because permite una gestión simplificada de los permisos al asignarlos a grupos de usuarios específicos.
-* Bad, because requiere mantener roles actualizados con cambios en las políticas de la compañía.
-* Bad, because podría limitar la capacidad de personalizar permisos a nivel individual.
+* Good, because permite una administración centralizada y segura de bases de datos SQL en la nube de AWS.
+* Good, because simplifica la implementación de microservicios al usar conexiones sin estado mediante HTTP/REST.
+* Bad, because limita la flexibilidad del sistema a la infraestructura de AWS, dificultando una potencial migración a otro proveedor de nube.
 
-### 0002-2-Control de acceso mediante permisos asignados en la base de datos
+### 0004-2 - Google Cloud SQL API
 
-* Good, because permite un control directo desde la base de datos y centraliza la asignación de permisos en un solo lugar.
-* Good, because centralizar los permisos en una base de datos facilita el seguimiento de accesos.
-* Bad, because podría añadir dependencia en la base de datos para la administración de permisos y carece de flexibilidad para configuraciones dinámicas o de permisos por servicio.
-* Bad, because podría ser menos eficiente si se requieren consultas frecuentes a la base de datos para verificar permisos en cada solicitud.
+* Good, because permite una integración fluida con los servicios de Google Cloud, siendo útil en entornos que ya operan en esa nube.
+* Good, because ofrece opciones avanzadas de recuperación ante desastres y alta disponibilidad.
+* Bad, because también limita el sistema a un proveedor de servicios específico (Google Cloud).
+* Bad, because podría incrementar los costos de operación en comparación con otros proveedores.
 
-## More Information
+### 0002-3 - ODBC
 
-Para una mayor definición de las acciones que se llevaran a cabo en esta base de datos es necesario entender que aquí se guardarán todos los datos de los clientes, empleados y administradores, siendo diferenciados por una extensión en sus nombres después del símbolo @. A la hora de las funciones todas estas las pueden llevan a cabo cada uno de los tipos de usuarios pero el hecho de modificar datos personales de otras cuentas esta solo permitido para administradores.
+* Good, because proporciona una solución multiplataforma y es compatible con numerosos sistemas de bases de datos SQL.
+* Good, because permite flexibilidad en entornos híbridos (local y en la nube), facilitando la interoperabilidad entre distintos proveedores.
+* Bad, because requiere configuraciones adicionales y puede introducir cierta latencia en comparación con las APIs específicas de la nube.
+* Bad, because puede resultar más compleja de administrar en un entorno de microservicios en comparación con soluciones basadas en HTTP/REST.
