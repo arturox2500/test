@@ -23,14 +23,13 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 
 ## Decision Outcome
 
-Chosen option: 0004-1 - Implementación del patrón Strategy, debido a que permite seleccionar y cambiar entre algoritmos de optimización de manera flexible según las condiciones operativas, sin intervención manual, y mejora la eficiencia en la asignación de rutas.
+Chosen option: 0004-2 - Implementación del patrón Observer, puesto que permite que los componentes reaccionen automáticamente a cambios en las condiciones de la ruta, como demoras o disponibilidad de repartidores, facilitando una adaptación inmediata del sistema a nuevas circunstancias.
 
 ### Consequences
 
-* Good, because facilita la selección dinámica de algoritmos y adapta la planificación de rutas automáticamente según la situación de reparto.
-* Good, because mejora la eficiencia al aplicar el algoritmo adecuado en función de la situación.
-* Good, because simplifica la adición de nuevos algoritmos en el futuro sin afectar la estructura principal del sistema.
-* Bad, because requiere una clara definición y encapsulación de cada algoritmo para mantener la cohesión y evitar dependencias innecesarias.
+* Good, because permite actualizar en tiempo real las condiciones de reparto, lo que facilita una respuesta rápida ante cambios operativos.
+* Good, because desacopla la lógica de actualización, permitiendo que los componentes que dependen de las condiciones de reparto reciban información de manera automática.
+* Bad, because requiere que los componentes interesados implementen lógica para reaccionar adecuadamente a los cambios notificados.
 
 ### Confirmation
 
