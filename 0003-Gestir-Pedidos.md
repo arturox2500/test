@@ -11,7 +11,7 @@ informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 
 El problema que se quiere resolver es el como administrar los diferentes estados en los que puede estar un pedido, siendo estos intento, pedido, autorización y aceptación.
 
-<!-- This is an optional element. Feel free to remove. -->
+
 ## Decision Drivers
 
 * RF-3: Gestión de pedidos por fases
@@ -24,34 +24,29 @@ El problema que se quiere resolver es el como administrar los diferentes estados
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Chosen option: 0003-3 Patrón State, because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
 
-<!-- This is an optional element. Feel free to remove. -->
+
 ### Consequences
 
 * Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
 * Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-* … <!-- numbers of consequences can vary -->
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Confirmation
 
 {Describe how the implementation of/compliance with the ADR can/will be confirmed. Is the chosen design and its implementation in line with the decision? E.g., a design/code review or a test with a library such as ArchUnit can help validate this. Note that although we classify this element as optional, it is included in many ADRs.}
 
-<!-- This is an optional element. Feel free to remove. -->
+
 ## Pros and Cons of the Options
 
 ### 0003-1 Patrón observer.
 
-<!-- This is an optional element. Feel free to remove. -->
-{example | description | pointer to more information | …}
+Este patrón se encarga de avisar a un objeto en caso de que el objeto al que este observando 
 
 * Good, because {argument a}
 * Good, because {argument b}
-<!-- use "neutral" if the given argument weights neither for good nor bad -->
 * Neutral, because {argument c}
 * Bad, because {argument d}
-* … <!-- numbers of pros and cons can vary -->
 
 ### 0003-2 Usar la BBDD para la persistencia de los estados.
 
