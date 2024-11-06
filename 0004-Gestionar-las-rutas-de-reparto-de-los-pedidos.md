@@ -3,13 +3,13 @@ status: {proposed}
 date: {2024-11-05}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
---- 
+---
 
-# Implementación de la funcionalidad para gestionar rutas de reparto de pedidos (RF-7)
+# Implementación de patrones de diseño para la optimización de rutas de reparto (RF-4)
 
 ## Context and Problem Statement
 
-En la nueva arquitectura basada en microservicios de la compañía de productos alimenticios, es necesario implementar la funcionalidad que permita a los administradores gestionar y modificar las rutas de reparto de los pedidos. Esto es crucial para mantener flexibilidad en la asignación de rutas de entrega y optimizar el proceso de reparto. Además, garantizar la coherencia en la planificación de rutas puede mejorar los tiempos de entrega y la satisfacción del cliente.
+En la arquitectura de microservicios de la compañía de productos alimenticios, es necesario implementar un sistema eficiente para gestionar y optimizar las rutas de reparto. Este sistema debe seleccionar automáticamente entre dos algoritmos de optimización en función de la demora del camión y otros factores operativos, ajustándose a las condiciones en tiempo real para mejorar la eficiencia logística. La implementación de patrones de diseño adecuados facilitará la selección automática del algoritmo, así como la notificación de cambios operativos para ajustar las rutas de manera dinámica.
 
 ## Decision Drivers
 
@@ -17,45 +17,63 @@ En la nueva arquitectura basada en microservicios de la compañía de productos 
 
 ## Considered Options
 
-* 0004-1 - Implementación de un sistema de gestión de rutas en la interfaz de usuario: Permitir a los administradores modificar las rutas de reparto directamente desde la interfaz gráfica, con opciones de selección de rutas y asignación de repartidores.
-* 0004-2 - Optimización de rutas mediante selección adaptativa de algoritmos: Implementar un sistema que optimice automáticamente las rutas de reparto mediante algoritmos adaptativos, ajustando la planificación en función de la demora del camión y disponibilidad de repartidores, con mínima intervención manual.
-* 0004-3 - Integración con un servicio externo de optimización de rutas: Utilizar un servicio externo especializado en planificación de rutas para gestionar de forma dinámica las asignaciones de repartidores.
+* 0004-1 - Implementación del patrón Strategy
+
+* 0004-2 - Implementación del patrón Observer
 
 ## Decision Outcome
 
-Chosen option: 0006-2 - Optimización de rutas mediante selección adaptativa de algoritmos, because reduce la intervención manual y mejora la eficiencia en la asignación de rutas al sugerir opciones optimizadas basadas en datos de localización y disponibilidad.
+Chosen option: 0004-1 - Implementación del patrón Strategy, debido a que permite seleccionar y cambiar entre algoritmos de optimización de manera flexible según las condiciones operativas, sin intervención manual, y mejora la eficiencia en la asignación de rutas.
 
 ### Consequences
 
-* Good, because reduce la intervención manual al sugerir rutas automáticamente, mejorando la eficiencia en la planificación de reparto.
-* Bad, because limita la flexibilidad de los administradores para ajustar rutas específicas en tiempo real si las condiciones cambian drásticamente.
-
+* Good, because facilita la selección dinámica de algoritmos y adapta la planificación de rutas automáticamente según la situación de reparto.
+* Good, because mejora la eficiencia al aplicar el algoritmo adecuado en función de la situación.
+* Good, because simplifica la adición de nuevos algoritmos en el futuro sin afectar la estructura principal del sistema.
+* Bad, because requiere una clara definición y encapsulación de cada algoritmo para mantener la cohesión y evitar dependencias innecesarias.
 
 ### Confirmation
 
-La implementación se verificará mediante pruebas de usabilidad y simulaciones de reparto para asegurar que la gestión de rutas es eficiente y que la interfaz permite una gestión intuitiva y ágil.
+La implementación se verificará mediante pruebas de simulación de condiciones de reparto variables para asegurar que la selección de algoritmos es eficiente y adecuada según los estados operativos. Además, se realizará una revisión de código para garantizar que las estrategias están correctamente encapsuladas y pueden ser fácilmente intercambiadas.
 
 ## Pros and Cons of the Options
 
-### 0004-1 - Implementación de un sistema de gestión de rutas en la interfaz de usuario
+### 0004-1 - Implementación del patrón Strategy
 
-* Good, because permite al administrador modificar rutas en tiempo real según las condiciones y disponibilidad de repartidores.
-* Good, because ofrece un alto nivel de control sobre la planificación de rutas, asegurando una gestión precisa.
-* Bad, because requiere intervención manual continua, lo que podría aumentar la carga de trabajo de los administradores.
-* Bad, because la dependencia de intervención humana podría generar errores si no se actualizan correctamente las rutas.
+Se propone el uso del patrón Strategy para seleccionar algoritmos de optimización de rutas, permitiendo cambios según la demora del camión o la carga de la flota. Esto proporciona adaptabilidad y facilita la incorporación de nuevos algoritmos en un futuro.
 
-### 0004-2 - Optimización de rutas mediante selección adaptativa de algoritmos
+* Good, because permite encapsular cada algoritmo de optimización como una estrategia separada, facilitando el cambio de algoritmos en tiempo de ejecución según las necesidades operativas.
+* Good, because ofrece una estructura flexible que simplifica la adición de nuevos algoritmos en el futuro sin afectar la estructura principal.
+* Good, because mejora la eficiencia al aplicar el algoritmo adecuado en función de la situación, optimizando los tiempos de entrega.
+* Bad, because puede requerir lógica adicional para decidir cuándo aplicar cada algoritmo de optimización.
+* Bad, because requiere una clara definición y encapsulación de cada algoritmo para mantener la cohesión y evitar dependencias innecesarias.
 
-* Good, because reduce la intervención manual al sugerir rutas automáticamente, mejorando la eficiencia en la planificación de reparto.
-* Good, because facilita la asignación de rutas basadas en datos, mejorando la precisión en la estimación de tiempos de entrega.
-* Bad, because limita la flexibilidad de los administradores para ajustar rutas específicas si las condiciones cambian drásticamente.
+### 0004-2 - Implementación del patrón Observer
 
-### 0004-3 - Integración con un servicio externo de optimización de rutas
+Se propone implementar el patrón Observer para monitorear las rutas de reparto y las condiciones de los pedidos. Este patrón permite que los componentes reaccionen automáticamente a cambios en las condiciones de la ruta, como demoras o disponibilidad de repartidores, facilitando una adaptación inmediata del sistema a nuevas circunstancias.
 
-* Good, because aprovecha tecnología avanzada de optimización, lo que podría reducir los tiempos de entrega y mejorar la eficiencia.
-* Good, because disminuye la carga de trabajo de los administradores, delegando la planificación a un servicio especializado.
-* Bad, because dependenderia de un proveedor externo, lo que puede tener implicaciones de costos y confiabilidad.
-* Bad, because puede limitar la capacidad de hacer ajustes específicos en función de las necesidades de la empresa.
+* Good, because permite actualizar en tiempo real las condiciones de reparto, lo que facilita una respuesta rápida ante cambios operativos.
+* Good, because desacopla la lógica de actualización, permitiendo que los componentes que dependen de las condiciones de reparto reciban información de manera automática.
+* Good, because mejora la sincronización entre diferentes componentes del sistema, asegurando que todos los módulos relevantes estén al tanto de los cambios en las rutas o demoras.
+* Bad, because requiere que los componentes interesados implementen lógica para reaccionar adecuadamente a los cambios notificados.
+* Bad, because puede aumentar la complejidad del sistema al manejar múltiples observadores y notificaciones, lo que podría impactar el rendimiento si no se gestiona correctamente.
 
 ## More Information
-Los administradores deberán iniciar sesión con permisos elevados para acceder a esta funcionalidad, y cualquier modificación de rutas quedará registrada para mantener un historial de cambios.
+
+El patron dependeria en el caso de que el cambio de algoritmo pueda ser a medio camino, o si solo es antes de que empiece el recorrido.
+Ademas debido a que las estadisticas deben ser a tiempo real es importante que el patron mas conveniente sea el observer (Convendria separar mejor el requisito 6 para poder añadirlo a los decision drivers)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Para implementar la gestión de rutas de manera efectiva utilizando el patrón Strategy, se debe definir una interfaz común para los algoritmos de optimización (por ejemplo, `IRutaOptimizacion`) y crear clases concretas que implementen esta interfaz (como `OptimizacionTiempo` y `OptimizacionCosto`). La clase de contexto (`GestorRutas`) mantendrá una referencia a la estrategia actual y cambiará de estrategia según las condiciones operativas.
+
+Si se utiliza el patrón Observer, se debe definir un sujeto (por ejemplo, `MonitorRutas`) que notifique a los observadores (como `GestorRutas`) sobre cualquier cambio en las condiciones de reparto. Los observadores implementarán una interfaz (por ejemplo, `IObservador`) que les permita recibir actualizaciones y reaccionar en consecuencia.
+
+Los administradores deberán iniciar sesión con permisos elevados para acceder a esta funcionalidad, y cualquier modificación de rutas quedará registrada para mantener un historial de cambios. Además, se integrarán sistemas de monitoreo para rastrear el estado de los repartidores y las condiciones de las rutas en tiempo real, asegurando que el sistema puede adaptarse rápidamente a cualquier cambio inesperado.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
