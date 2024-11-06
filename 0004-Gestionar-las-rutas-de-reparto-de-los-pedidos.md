@@ -59,6 +59,9 @@ Se propone implementar el patrón Observer para monitorear las rutas de reparto 
 * Bad, because puede aumentar la complejidad del sistema al manejar múltiples observadores y notificaciones, lo que podría impactar el rendimiento si no se gestiona correctamente.
 
 ## More Information
+Puesto que es requerido que la informacion de los los camiones este disponible en tiempo real, se ha considerado que la implementación de un patron observer que permite actualizar en tiempo real las condiciones de reparto, posibilitando resolver tambien el problema de las estadisticas sobre los camiones y sus rutas ya que permite actualizarlas dependiendo de eventos sucedidos. 
+
+
 
 El patron dependeria en el caso de que el cambio de algoritmo pueda ser a medio camino, o si solo es antes de que empiece el recorrido.
 Ademas debido a que las estadisticas deben ser a tiempo real es importante que el patron mas conveniente sea el observer (Convendria separar mejor el requisito 6 para poder añadirlo a los decision drivers)
