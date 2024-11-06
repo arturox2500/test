@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 --- 
 
-# Implementación de autenticación de clientes (RF-1 y RF-2) y manejo de datos personales (RF-3, RF-3.1, RF-3.2)
+# Acceso a la base de datos
 
 ## Context and Problem Statement
 
