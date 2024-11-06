@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Implementación de patrones de diseño para la optimización de rutas de reparto (RF-4)
+# Implementación de patrones de diseño para la optimización de rutas de reparto
 
 ## Context and Problem Statement
 
@@ -14,6 +14,7 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 ## Decision Drivers
 
 * RF-4: Gestión de rutas de reparto.
+* RF-6.1: Gestor de estadísticas para las rutas.
 
 ## Considered Options
 
