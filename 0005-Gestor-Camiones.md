@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Efificiencia de la utilización de los camiones
+# Eficiencia de la utilización de los camiones
 
 ## Context and Problem Statement
 
