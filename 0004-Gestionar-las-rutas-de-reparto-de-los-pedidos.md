@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Implementación de patrones de diseño para la optimización de rutas de reparto (RF-4)
+# Implementación de patrones de diseño para la desición de rutas de reparto
 
 ## Context and Problem Statement
 
