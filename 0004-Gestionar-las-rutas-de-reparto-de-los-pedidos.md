@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Implementación de patrones de diseño para la optimización de rutas de reparto
+# Implementación de patrones de diseño para la optimización de rutas de reparto (RF-4)
 
 ## Context and Problem Statement
 
@@ -14,7 +14,6 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 ## Decision Drivers
 
 * RF-4: Gestión de rutas de reparto.
-* RF-6.1: Gestor de estadísticas para las rutas.
 
 ## Considered Options
 
@@ -24,13 +23,14 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 
 ## Decision Outcome
 
-Chosen option: 0004-2 - Implementación del patrón Observer, puesto que permite que los componentes reaccionen automáticamente a cambios en las condiciones de la ruta, como demoras o disponibilidad de repartidores, facilitando una adaptación inmediata del sistema a nuevas circunstancias.
+Chosen option: 0004-1 - Implementación del patrón Strategy, debido a que permite seleccionar y cambiar entre algoritmos de optimización de manera flexible según las condiciones operativas, sin intervención manual, y mejora la eficiencia en la asignación de rutas.
 
 ### Consequences
 
-* Good, because permite actualizar en tiempo real las condiciones de reparto, lo que facilita una respuesta rápida ante cambios operativos.
-* Good, because desacopla la lógica de actualización, permitiendo que los componentes que dependen de las condiciones de reparto reciban información de manera automática.
-* Bad, because requiere que los componentes interesados implementen lógica para reaccionar adecuadamente a los cambios notificados.
+* Good, because facilita la selección dinámica de algoritmos y adapta la planificación de rutas automáticamente según la situación de reparto.
+* Good, because mejora la eficiencia al aplicar el algoritmo adecuado en función de la situación.
+* Good, because simplifica la adición de nuevos algoritmos en el futuro sin afectar la estructura principal del sistema.
+* Bad, because requiere una clara definición y encapsulación de cada algoritmo para mantener la cohesión y evitar dependencias innecesarias.
 
 ### Confirmation
 
@@ -57,26 +57,4 @@ Se propone implementar el patrón Observer para monitorear las rutas de reparto 
 * Good, because mejora la sincronización entre diferentes componentes del sistema, asegurando que todos los módulos relevantes estén al tanto de los cambios en las rutas o demoras.
 * Bad, because requiere que los componentes interesados implementen lógica para reaccionar adecuadamente a los cambios notificados.
 * Bad, because puede aumentar la complejidad del sistema al manejar múltiples observadores y notificaciones, lo que podría impactar el rendimiento si no se gestiona correctamente.
-
-## More Information
-Puesto que es requerido que la informacion de los los camiones este disponible en tiempo real, se ha considerado que la implementación de un patron observer que permite actualizar en tiempo real las condiciones de reparto, posibilitando resolver tambien el problema de las estadisticas sobre los camiones y sus rutas ya que permite actualizarlas dependiendo de eventos sucedidos. 
-
-
-
-El patron dependeria en el caso de que el cambio de algoritmo pueda ser a medio camino, o si solo es antes de que empiece el recorrido.
-Ademas debido a que las estadisticas deben ser a tiempo real es importante que el patron mas conveniente sea el observer (Convendria separar mejor el requisito 6 para poder añadirlo a los decision drivers)
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-Para implementar la gestión de rutas de manera efectiva utilizando el patrón Strategy, se debe definir una interfaz común para los algoritmos de optimización (por ejemplo, `IRutaOptimizacion`) y crear clases concretas que implementen esta interfaz (como `OptimizacionTiempo` y `OptimizacionCosto`). La clase de contexto (`GestorRutas`) mantendrá una referencia a la estrategia actual y cambiará de estrategia según las condiciones operativas.
-
-Si se utiliza el patrón Observer, se debe definir un sujeto (por ejemplo, `MonitorRutas`) que notifique a los observadores (como `GestorRutas`) sobre cualquier cambio en las condiciones de reparto. Los observadores implementarán una interfaz (por ejemplo, `IObservador`) que les permita recibir actualizaciones y reaccionar en consecuencia.
-
-Los administradores deberán iniciar sesión con permisos elevados para acceder a esta funcionalidad, y cualquier modificación de rutas quedará registrada para mantener un historial de cambios. Además, se integrarán sistemas de monitoreo para rastrear el estado de los repartidores y las condiciones de las rutas en tiempo real, asegurando que el sistema puede adaptarse rápidamente a cualquier cambio inesperado.
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-GPT COCHINO NO SUBIR AL GITHUB DE VERDAD ANTES DE LIMPIAR
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
