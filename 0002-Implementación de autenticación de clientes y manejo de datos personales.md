@@ -13,11 +13,8 @@ Para la nueva arquitectura basada en microservicios de la compañía de producto
 
 ## Decision Drivers
 
-* RF-1: Iniciar sesión.
-* RF-2: Registrarse.
-* RF-3: Uso de datos personales de los clientes
-* RF-3.1: Acceder datos personales de los clientes.
-* RF-3.2: Modificar datos personales de los clientes.
+* RF-2: Gestor de base de datos.
+* RD-1: Uso de las 2 BBDD SQL.
 
 
 ## Considered Options
