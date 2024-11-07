@@ -1,11 +1,11 @@
 ---
-status: {proposed}
+status: {acce}
 date: {2024-11-05}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Implementación de patrones de diseño para la desición de rutas de reparto
+# Implementación de patrones de diseño para la decisión de rutas de reparto
 
 ## Context and Problem Statement
 
@@ -18,12 +18,11 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 ## Considered Options
 
 * 0004-1 - Implementación del patrón Strategy
-
 * 0004-2 - Implementación del patrón Observer
 
 ## Decision Outcome
 
-Chosen option: 0004-1 - Implementación del patrón Strategy, debido a que permite seleccionar y cambiar entre algoritmos de optimización de manera flexible según las condiciones operativas, sin intervención manual, y mejora la eficiencia en la asignación de rutas.
+Chosen option: 0004-1 - Implementación del patrón Strategy, because permite seleccionar y cambiar entre algoritmos de optimización de manera flexible según las condiciones operativas, sin intervención manual, y mejora la eficiencia en la asignación de rutas.
 
 ### Consequences
 

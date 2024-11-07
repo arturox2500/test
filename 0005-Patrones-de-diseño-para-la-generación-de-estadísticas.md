@@ -1,6 +1,6 @@
 ---
-status: {proposed}
-date: {2024-11-05}
+status: {accepted}
+date: {2024-11-07}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
@@ -18,7 +18,6 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 ## Considered Options
 
 * 0005-1 - Implementación del patrón Observer
-
 * 0005-2 - Implementación del patrón Publisher-Subscriber
 
 ## Decision Outcome
