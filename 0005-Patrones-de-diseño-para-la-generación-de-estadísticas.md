@@ -13,17 +13,17 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 
 ## Decision Drivers
 
-* RF-6.1: Gestor de estadísticas para las rutas.
+* RF-5.1: Gestor de estadísticas para las rutas.
 
 ## Considered Options
 
-* 0006-1 - Implementación del patrón Observer
+* 0005-1 - Implementación del patrón Observer
 
-* 0006-2 - Implementación del patrón Publisher-Subscriber
+* 0005-2 - Implementación del patrón Publisher-Subscriber
 
 ## Decision Outcome
 
-Chosen option: 0006-1 - Implementación del patrón Observer, debido a que este patrón facilita una actualización en tiempo real de las estadísticas, desacoplando los componentes que generan las actualizaciones de aquellos que las consumen, y mejorando la sincronización entre los diferentes módulos del sistema.
+Chosen option: 0005-1 - Implementación del patrón Observer, debido a que este patrón facilita una actualización en tiempo real de las estadísticas, desacoplando los componentes que generan las actualizaciones de aquellos que las consumen, y mejorando la sincronización entre los diferentes módulos del sistema.
 
 ### Consequences
 
@@ -38,7 +38,7 @@ La implementación será verificada mediante pruebas de integración para asegur
 
 ## Pros and Cons of the Options
 
-### 0006-1 - Implementación del patrón Observer
+### 0005-1 - Implementación del patrón Observer
 
 El patrón Observer se utilizará para que los componentes que generan estadísticas notifiquen automáticamente a los módulos interesados cuando haya cambios en la información relevante, como el estado de los pedidos o la ubicación de los camiones.
 
@@ -47,7 +47,7 @@ El patrón Observer se utilizará para que los componentes que generan estadíst
 * Good, because mejora la sincronización entre los módulos del sistema al garantizar que todos los componentes estén actualizados con la misma información.
 * Bad, because puede aumentar la complejidad del sistema si no se gestionan adecuadamente los observadores y las notificaciones, especialmente cuando hay un gran volumen de componentes interesados.
 
-### 0006-2 - Implementación del patrón Publisher-Subscriber
+### 0005-2 - Implementación del patrón Publisher-Subscriber
 
 El patrón Publisher-Subscriber también podría ser utilizado para la distribución de estadísticas en tiempo real. En este caso, los publicadores generan eventos que se distribuyen a través de un canal de eventos, permitiendo que los suscriptores los reciban automáticamente.
 
