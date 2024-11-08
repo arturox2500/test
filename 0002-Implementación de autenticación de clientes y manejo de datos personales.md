@@ -1,9 +1,9 @@
 ---
-status: {pending}
-date: {2024-10-31}
+status: {accepted}
+date: {2024-11-09}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
---- 
+---
 
 # Gestión de las Bases de Datos
 
@@ -38,20 +38,20 @@ La elección se confirmará mediante pruebas de conectividad, rendimiento y esca
 
 ### 0002-1 - Amazon RDS Data API
 
-* Good, because permite una administración centralizada y segura de bases de datos SQL en la nube de AWS.
-* Good, because simplifica la implementación de microservicios al usar conexiones sin estado mediante HTTP/REST.
-* Bad, because limita la flexibilidad del sistema a la infraestructura de AWS, dificultando una potencial migración a otro proveedor de nube.
+* Good, because Permite una administración centralizada y segura de bases de datos SQL en la nube de AWS.
+* Good, because Simplifica la implementación de microservicios al usar conexiones sin estado mediante HTTP/REST.
+* Bad, because Limita la flexibilidad del sistema a la infraestructura de AWS, dificultando una potencial migración a otro proveedor de nube.
 
 ### 0004-2 - Google Cloud SQL API
 
-* Good, because permite una integración fluida con los servicios de Google Cloud, siendo útil en entornos que ya operan en esa nube.
-* Good, because ofrece opciones avanzadas de recuperación ante desastres y alta disponibilidad.
-* Bad, because también limita el sistema a un proveedor de servicios específico (Google Cloud).
-* Bad, because podría incrementar los costos de operación en comparación con otros proveedores.
+* Good, because Permite una integración fluida con los servicios de Google Cloud, siendo útil en entornos que ya operan en esa nube.
+* Good, because Ofrece opciones avanzadas de recuperación ante desastres y alta disponibilidad.
+* Bad, because También limita el sistema a un proveedor de servicios específico (Google Cloud).
+* Bad, because Podría incrementar los costos de operación en comparación con otros proveedores.
 
 ### 0002-3 - ODBC
 
-* Good, because proporciona una solución multiplataforma y es compatible con numerosos sistemas de bases de datos SQL.
-* Good, because permite flexibilidad en entornos híbridos (local y en la nube), facilitando la interoperabilidad entre distintos proveedores.
-* Bad, because requiere configuraciones adicionales y puede introducir cierta latencia en comparación con las APIs específicas de la nube.
-* Bad, because puede resultar más compleja de administrar en un entorno de microservicios en comparación con soluciones basadas en HTTP/REST.
+* Good, because Proporciona una solución multiplataforma y es compatible con numerosos sistemas de bases de datos SQL.
+* Good, because Permite flexibilidad en entornos híbridos (local y en la nube), facilitando la interoperabilidad entre distintos proveedores.
+* Bad, because Requiere configuraciones adicionales y puede introducir cierta latencia en comparación con las APIs específicas de la nube.
+* Bad, because Puede resultar más compleja de administrar en un entorno de microservicios en comparación con soluciones basadas en HTTP/REST.

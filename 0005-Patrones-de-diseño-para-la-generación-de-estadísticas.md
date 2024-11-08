@@ -1,6 +1,6 @@
 ---
 status: {accepted}
-date: {2024-11-07}
+date: {2024-11-09}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
@@ -22,14 +22,14 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 
 ## Decision Outcome
 
-Chosen option: 0005-1 - Implementación del patrón Observer, debido a que este patrón facilita una actualización en tiempo real de las estadísticas, desacoplando los componentes que generan las actualizaciones de aquellos que las consumen, y mejorando la sincronización entre los diferentes módulos del sistema.
+Chosen option: 0005-1 - Implementación del patrón Observer, because Facilita una actualización en tiempo real de las estadísticas, desacoplando los componentes que generan las actualizaciones de aquellos que las consumen, y mejorando la sincronización entre los diferentes módulos del sistema.
 
 ### Consequences
 
-* Good, because permite la actualización en tiempo real de las estadísticas sin necesidad de que los componentes consumidores soliciten la información continuamente.
-* Good, because facilita que los módulos interesados en las estadísticas, como los camiones o el estado de los pedidos, reaccionen de manera inmediata a los cambios operativos.
-* Good, because mejora la escalabilidad al permitir que se añadan nuevos observadores sin necesidad de modificar los componentes generadores de estadísticas.
-* Bad, because puede requerir un esfuerzo inicial significativo para garantizar que los cambios en el sistema estén bien definidos y notificados de manera eficiente.
+* Good, because Permite la actualización en tiempo real de las estadísticas sin necesidad de que los componentes consumidores soliciten la información continuamente.
+* Good, because Facilita que los módulos interesados en las estadísticas, como los camiones o el estado de los pedidos, reaccionen de manera inmediata a los cambios operativos.
+* Good, because Mejora la escalabilidad al permitir que se añadan nuevos observadores sin necesidad de modificar los componentes generadores de estadísticas.
+* Bad, because Puede requerir un esfuerzo inicial significativo para garantizar que los cambios en el sistema estén bien definidos y notificados de manera eficiente.
 
 ### Confirmation
 
@@ -41,16 +41,16 @@ La implementación será verificada mediante pruebas de integración para asegur
 
 El patrón Observer se utilizará para que los componentes que generan estadísticas notifiquen automáticamente a los módulos interesados cuando haya cambios en la información relevante, como el estado de los pedidos o la ubicación de los camiones.
 
-* Good, because permite que los módulos de estadísticas envíen actualizaciones en tiempo real sin necesidad de intervenciones manuales.
-* Good, because desacopla los componentes generadores de estadísticas de los consumidores, permitiendo una mayor flexibilidad y escalabilidad en el sistema.
-* Good, because mejora la sincronización entre los módulos del sistema al garantizar que todos los componentes estén actualizados con la misma información.
-* Bad, because puede aumentar la complejidad del sistema si no se gestionan adecuadamente los observadores y las notificaciones, especialmente cuando hay un gran volumen de componentes interesados.
+* Good, because Permite que los módulos de estadísticas envíen actualizaciones en tiempo real sin necesidad de intervenciones manuales.
+* Good, because Desacopla los componentes generadores de estadísticas de los consumidores, permitiendo una mayor flexibilidad y escalabilidad en el sistema.
+* Good, because Mejora la sincronización entre los módulos del sistema al garantizar que todos los componentes estén actualizados con la misma información.
+* Bad, because Puede aumentar la complejidad del sistema si no se gestionan adecuadamente los observadores y las notificaciones, especialmente cuando hay un gran volumen de componentes interesados.
 
 ### 0005-2 - Implementación del patrón Publisher-Subscriber
 
 El patrón Publisher-Subscriber también podría ser utilizado para la distribución de estadísticas en tiempo real. En este caso, los publicadores generan eventos que se distribuyen a través de un canal de eventos, permitiendo que los suscriptores los reciban automáticamente.
 
-* Good, because permite una comunicación eficiente entre los componentes sin que los suscriptores necesiten realizar solicitudes continuas.
-* Good, because permite que los suscriptores reaccionen en tiempo real a los cambios de estadísticas.
-* Good, because permite un control centralizado sobre qué componentes reciben las actualizaciones.
-* Bad, because la gestión de los suscriptores podría ser más compleja, especialmente cuando el número de componentes interesados aumenta significativamente, lo que podría impactar el rendimiento.
+* Good, because Permite una comunicación eficiente entre los componentes sin que los suscriptores necesiten realizar solicitudes continuas.
+* Good, because Permite que los suscriptores reaccionen en tiempo real a los cambios de estadísticas.
+* Good, because Permite un control centralizado sobre qué componentes reciben las actualizaciones.
+* Bad, because La gestión de los suscriptores podría ser más compleja, especialmente cuando el número de componentes interesados aumenta significativamente, lo que podría impactar el rendimiento.
