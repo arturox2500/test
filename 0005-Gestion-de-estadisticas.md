@@ -49,7 +49,7 @@ El patrón Observer se utilizará para que los componentes que generan estadíst
 
 ### 0005-2 - Uso de una clase intermediaria gestionar estadísticas.
 
-EstadisticasManager interactúa con UsuarioRepository y PedidoRepository para obtener la información necesaria y expone métodos especializados para generar estadísticas de clientes y pedidos (por ejemplo, generarEstadisticasClientes y generarEstadisticasPedidos).
+StatisticsManager interactúa con UserRepository y Order Repository para obtener la información necesaria y expone métodos especializados para generar estadísticas de clientes y pedidos (por ejemplo, generateStatisticsClients y generateStatisticsOrders).
 
 * Good, because EstadisticasManager centraliza la lógica de generación de estadísticas, reduciendo la complejidad de los servicios de negocio.
 * Good, because La clase intermediaria permite la recolección y procesamiento de datos de manera eficiente, obteniendo la información directamente de los repositorios sin afectar la cohesión de los servicios de negocio.
