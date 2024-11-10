@@ -18,9 +18,9 @@ El sistema requiere un componente de gestión de bases de datos que permita acce
 
 ## Considered Options
 
-* 0002-1: Utilizar Amazon RDS Data API para gestionar el acceso y control de bases de datos SQL de manera segura y escalable en la nube de AWS.
-* 0002-2: Implementar Google Cloud SQL API para la administración y acceso a bases de datos SQL con capacidades nativas de Google Cloud.
-* 0002-3: Usar ODBC como una solución multiplataforma que facilite la interoperabilidad entre diferentes entornos y bases de datos SQL.
+* 0002-1: Utilizar Amazon RDS Data API.
+* 0002-2: Utilizar Google Cloud SQL API.
+* 0002-3: Utilizar ODBC.
 
 ## Decision Outcome
 
