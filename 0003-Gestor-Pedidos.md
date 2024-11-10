@@ -2,7 +2,8 @@
 status: {accepted}
 date: {2024-11-10}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
-informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
+consulted: {Elinee Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
+informed: {Víctor Bartolomé Letosa, Alejandro Valor González}
 ---
 
 # Gestionar los diferentes estados de un pedido.
