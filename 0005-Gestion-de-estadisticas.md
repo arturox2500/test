@@ -5,7 +5,7 @@ decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandon
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
 
-# Implementación de patrones de diseño para la generación de estadísticas en tiempo real
+# Gestión y generación de las estadisticas
 
 ## Context and Problem Statement
 
@@ -14,26 +14,27 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 ## Decision Drivers
 
 * RF-5.1: Gestor de estadísticas para las rutas.
+* RF-5.2: Generación de estadísticas para los usuarios.
 
 ## Considered Options
 
 * 0005-1 - Implementación del patrón Observer
-* 0005-2 - Implementación del patrón Publisher-Subscriber
+* 0005-2 - Uso de una clase intermediaria gestionar estadísticas. 
+* 0005-3 - Implementación del patrón Publisher-Subscriber
 
 ## Decision Outcome
 
-Chosen option: 0005-1 - Implementación del patrón Observer, because Facilita una actualización en tiempo real de las estadísticas, desacoplando los componentes que generan las actualizaciones de aquellos que las consumen, y mejorando la sincronización entre los diferentes módulos del sistema.
+Chosen option: 0005-2 - Uso de la clase intermediaria para gestionar estadísticas puesto que permite organizar las estadísticas de manera centralizada, reduciendo la complejidad y facilitando el mantenimiento. 
 
 ### Consequences
 
-* Good, because Permite la actualización en tiempo real de las estadísticas sin necesidad de que los componentes consumidores soliciten la información continuamente.
-* Good, because Facilita que los módulos interesados en las estadísticas, como los camiones o el estado de los pedidos, reaccionen de manera inmediata a los cambios operativos.
-* Good, because Mejora la escalabilidad al permitir que se añadan nuevos observadores sin necesidad de modificar los componentes generadores de estadísticas.
-* Bad, because Puede requerir un esfuerzo inicial significativo para garantizar que los cambios en el sistema estén bien definidos y notificados de manera eficiente.
+* Good, because EstadisticasManager centraliza la lógica de generación de estadísticas, reduciendo la complejidad de los servicios de negocio.
+* Good, because La escalabilidad del sistema, ya que EstadisticasManager puede ser extendida para generar nuevas estadísticas sin necesidad de modificar otros módulos.
+* Bad, because Puede requerir un diseño cuidadoso para optimizar las consultas a los repositorios y evitar cargas innecesarias en el sistema de bases de datos.
 
 ### Confirmation
 
-La implementación será verificada mediante pruebas de integración para asegurar que las actualizaciones en tiempo real se distribuyen correctamente a todos los componentes interesados. Además, se realizarán pruebas de carga para evaluar el rendimiento del sistema bajo alta demanda de actualizaciones.
+La implementación será verificada mediante pruebas de integración para asegurar que las actualizaciones en tiempo real se distribuyen correctamente a todos los componentes interesados.
 
 ## Pros and Cons of the Options
 
@@ -46,7 +47,17 @@ El patrón Observer se utilizará para que los componentes que generan estadíst
 * Good, because Mejora la sincronización entre los módulos del sistema al garantizar que todos los componentes estén actualizados con la misma información.
 * Bad, because Puede aumentar la complejidad del sistema si no se gestionan adecuadamente los observadores y las notificaciones, especialmente cuando hay un gran volumen de componentes interesados.
 
-### 0005-2 - Implementación del patrón Publisher-Subscriber
+### 0005-2 - Uso de una clase intermediaria gestionar estadísticas.
+
+StatisticsManager interactúa con UserRepository y Order Repository para obtener la información necesaria y expone métodos especializados para generar estadísticas de clientes y pedidos (por ejemplo, generateStatisticsClients y generateStatisticsOrders).
+
+* Good, because EstadisticasManager centraliza la lógica de generación de estadísticas, reduciendo la complejidad de los servicios de negocio.
+* Good, because La clase intermediaria permite la recolección y procesamiento de datos de manera eficiente, obteniendo la información directamente de los repositorios sin afectar la cohesión de los servicios de negocio.
+* Good, because La escalabilidad del sistema, ya que EstadisticasManager puede ser extendida para generar nuevas estadísticas sin necesidad de modificar otros módulos.
+* Bad, because Puede requerir un diseño cuidadoso para optimizar las consultas a los repositorios y evitar cargas innecesarias en el sistema de bases de datos.
+
+
+### 0005-3 - Implementación del patrón Publisher-Subscriber
 
 El patrón Publisher-Subscriber también podría ser utilizado para la distribución de estadísticas en tiempo real. En este caso, los publicadores generan eventos que se distribuyen a través de un canal de eventos, permitiendo que los suscriptores los reciban automáticamente.
 
