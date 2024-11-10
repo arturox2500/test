@@ -9,7 +9,7 @@ informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 
 ## Context and Problem Statement
 
-En la arquitectura de microservicios de la compañía de productos alimenticios, es necesario gestionar y generar estadísticas en tiempo real sobre el estado de los pedidos, la situación de los camiones y otros aspectos del sistema. El módulo de estadísticas debe proporcionar actualizaciones automáticas a los componentes interesados para que estén al tanto de la información más actualizada.
+El problema a resolver es gestionar y generar estadísticas en tiempo real sobre el estado de los pedidos, la situación de los camiones y otros aspectos del sistema, proporcionando actualizaciones automáticas a los componentes interesados para mantenerlos informados con los datos más actuales.
 
 ## Decision Drivers
 
