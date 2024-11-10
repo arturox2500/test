@@ -24,11 +24,13 @@ El sistema requiere un componente de gestión de bases de datos que permita acce
 
 ## Decision Outcome
 
-
+Chosen option: 0003-2 Usar ODBC, because nos ofrece una solución multiplataforma y flexible que permite a la arquitectura de microservicios acceder a las bases de datos SQL de los clientes y de pedidos.
 
 ### Consequences
 
-
+* Good, because Proporciona una solución multiplataforma y es compatible con numerosos sistemas de bases de datos SQL.
+* Good, because ODBC es un estándar ampliamente soportado, lo cual facilita la integración con diversas herramientas y plataformas.
+* Bad, because Puede ser menos eficiente en términos de rendimiento en comparación con APIs nativas, ya que introduce una capa adicional en la comunicación entre el servicio y la base de datos.
 
 ### Confirmation
 
@@ -54,4 +56,3 @@ La elección se confirmará mediante pruebas de conectividad, rendimiento y esca
 * Good, because Proporciona una solución multiplataforma y es compatible con numerosos sistemas de bases de datos SQL.
 * Good, because Permite flexibilidad en entornos híbridos (local y en la nube), facilitando la interoperabilidad entre distintos proveedores.
 * Bad, because Requiere configuraciones adicionales y puede introducir cierta latencia en comparación con las APIs específicas de la nube.
-* Bad, because Puede resultar más compleja de administrar en un entorno de microservicios en comparación con soluciones basadas en HTTP/REST.
