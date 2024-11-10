@@ -1,6 +1,6 @@
 ---
 status: {accepted}
-date: {2024-11-09}
+date: {2024-11-10}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
 informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
 ---
@@ -24,7 +24,7 @@ El sistema requiere un componente de gestión de bases de datos que permita acce
 
 ## Decision Outcome
 
-Chosen option: 0002-3 Usar ODBC, because nos ofrece una solución multiplataforma y flexible que permite a la arquitectura de microservicios acceder a las bases de datos SQL de los clientes y de pedidos.
+Chosen option: 0002-3 Usar ODBC, because Nos ofrece una solución multiplataforma y flexible que permite a la arquitectura de microservicios acceder a las bases de datos SQL de los clientes y de pedidos.
 
 ### Consequences
 

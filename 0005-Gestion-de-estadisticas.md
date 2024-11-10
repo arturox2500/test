@@ -24,7 +24,7 @@ En la arquitectura de microservicios de la compañía de productos alimenticios,
 
 ## Decision Outcome
 
-Chosen option: 0005-2 - Uso de la clase intermediaria para gestionar estadísticas puesto que permite organizar las estadísticas de manera centralizada, reduciendo la complejidad y facilitando el mantenimiento. 
+Chosen option: 0005-2 - Uso de la clase intermediaria para gestionar estadísticas, because Permite organizar las estadísticas de manera centralizada, reduciendo la complejidad y facilitando el mantenimiento. 
 
 ### Consequences
 
