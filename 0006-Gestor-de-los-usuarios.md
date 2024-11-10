@@ -28,7 +28,7 @@ Chosen option: 0006-1-Creación de la clase Customer, because Es la opción que 
 
 * Good, because Da sencillez al diseño y es fácil de integrar.
 * Good, because Permite el almacenado de los datos en la BBDD permitiendo la persistencia de estos y siendo fiable frente a posibles caídas del sistema.
-* Bad, because Escasa flexibilidad para cambios.
+* Bad, because Posee una escasa flexibilidad para cambios.
 
 ### Confirmation
 
@@ -42,7 +42,7 @@ Esta opción se basa en la implementación de una clase, con la que se realizara
 
 * Good, because Da sencillez al diseño y es fácil de integrar.
 * Good, because Permite el almacenado de los datos en la BBDD permitiendo la persistencia de estos y siendo fiable frente a posibles caídas del sistema.
-* Bad, because Escasa flexibilidad para cambios.
+* Bad, because Posee una escasa flexibilidad para cambios.
 
 ### 0006-2-Acceso directo a la BBDD.
 
