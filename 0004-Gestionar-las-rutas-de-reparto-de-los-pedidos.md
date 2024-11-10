@@ -10,7 +10,7 @@ informed: {Víctor Bartolomé Letosa, Alejandro Valor González}
 
 ## Context and Problem Statement
 
-En la arquitectura de microservicios de la compañía de productos alimenticios, es necesario implementar un sistema eficiente para gestionar y optimizar las rutas de reparto. Este sistema debe seleccionar automáticamente entre dos algoritmos de optimización en función de la demora del camión y otros factores operativos, ajustándose a las condiciones en tiempo real para mejorar la eficiencia logística. La implementación de patrones de diseño adecuados facilitará la selección automática del algoritmo.
+El problema a resolver es optimizar las rutas de reparto mediante un sistema que elija automáticamente entre dos algoritmos en función de la demora del camión y otros factores en tiempo real, mejorando así la eficiencia logística.
 
 ## Decision Drivers
 
