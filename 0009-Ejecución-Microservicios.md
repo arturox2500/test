@@ -74,9 +74,9 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
  
- * MicroserviceManager: Podría incluir métodos como executeMicroservice(serviceName) y registerMicroservice(service).
+ * * MicroserviceManager: Podría incluir métodos como executeMicroservice(serviceName) y registerMicroservice(service).
 
- * Customer o OrderApplication: Estas clases podrían llamar a MicroserviceManager para ejecutar microservicios específicos.
+ * * Customer o OrderApplication: Estas clases podrían llamar a MicroserviceManager para ejecutar microservicios específicos.
 
 - Ventajas: Facilita la centralización y control de los microservicios en un solo componente.
 
@@ -88,9 +88,9 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
 
- * IMicroservice: Define la estructura base para microservicios.
+ * * IMicroservice: Define la estructura base para microservicios.
 
- * OrderService, RouteService, etc.: Implementan IMicroservice y se integran en el sistema.
+ * * OrderService, RouteService, etc.: Implementan IMicroservice y se integran en el sistema.
 
 - Ventajas: Cada microservicio puede desarrollarse, desplegarse y gestionarse de forma independiente.
 
@@ -102,9 +102,9 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
 
- * OrderApplication: Podría tener métodos como executeOrderMicroservice.
+ * * OrderApplication: Podría tener métodos como executeOrderMicroservice.
 
- * RoutesService: Podría tener métodos específicos para microservicios relacionados con la gestión de rutas.
+ * * RoutesService: Podría tener métodos específicos para microservicios relacionados con la gestión de rutas.
 
 - Ventajas: Simplifica la arquitectura, eliminando la necesidad de un gestor de microservicios o interfaces adicionales.
 - Desventajas: Limita la extensibilidad y modularidad, ya que cada clase se encargará de ejecutar sus propios microservicios.

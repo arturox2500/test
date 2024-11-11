@@ -74,9 +74,9 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
 
- * PaymentGateway: Incluye métodos como processPayment(amount, customer) y savePaymentData(customer, paymentInfo).
+ * * PaymentGateway: Incluye métodos como processPayment(amount, customer) y savePaymentData(customer, paymentInfo).
 
- * Customer: La clase Customer se relacionaría con PaymentGateway para realizar pagos. Se podría añadir el método makePayment(amount).
+ * * Customer: La clase Customer se relacionaría con PaymentGateway para realizar pagos. Se podría añadir el método makePayment(amount).
 
 - Ventajas: Separa las preocupaciones de seguridad y procesamiento de pagos del resto del sistema, y permite utilizar una API de pagos externa.
 
@@ -102,7 +102,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
 
- * Customer: Añadir métodos makePayment(amount) y savePaymentData(paymentInfo) dentro de Customer.
+ * * Customer: Añadir métodos makePayment(amount) y savePaymentData(paymentInfo) dentro de Customer.
 
 - Ventajas: Simplifica la lógica de pagos al no necesitar clases adicionales.
 
