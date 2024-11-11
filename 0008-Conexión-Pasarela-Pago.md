@@ -88,9 +88,9 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 
 - Clases relacionadas:
 
- * IPaymentProcessor (interfaz): Define métodos de pago como processPayment y savePaymentData.
+ * * IPaymentProcessor (interfaz): Define métodos de pago como processPayment y savePaymentData.
 
- * PaymentGateway (implementación): Implementa IPaymentProcessor y maneja los detalles de interacción con la pasarela externa.
+ * * PaymentGateway (implementación): Implementa IPaymentProcessor y maneja los detalles de interacción con la pasarela externa.
 
 - Ventajas: Facilita la extensión y el cambio de proveedor de pago si es necesario en el futuro.
 
