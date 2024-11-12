@@ -23,13 +23,13 @@ Se requiere una solución para gestionar incidencias en el sistema que permita n
 
 ## Decision Outcome
 
-Chosen option: 0007-1 - Clase de gestión de incidencias que notifica directamente a la clase de gestión de rutas.
+Chosen option: 0007-1 - Creación de una clase de gestión de incidencias, because permite una comunicación directa y sencilla con la clase de gestión de rutas sin agregar complejidad innecesaria al sistema.
 
 ### Consequences
 
-* Good, porque una clase dedicada permite un control directo y sencillo de la comunicación, manteniendo la simplicidad.
-* Good, porque facilita el mantenimiento al centralizar la lógica de notificación en una clase.
-* Bad, porque limita la flexibilidad para agregar otros módulos que podrían beneficiarse de recibir notificaciones de incidencias.
+* Good, because una clase dedicada permite un control directo y sencillo de la comunicación, manteniendo la simplicidad.
+* Good, because facilita el mantenimiento al centralizar la lógica de notificación en una clase.
+* Bad, because limita la flexibilidad para agregar otros módulos que podrían beneficiarse de recibir notificaciones de incidencias.
 
 ### Confirmation
 
