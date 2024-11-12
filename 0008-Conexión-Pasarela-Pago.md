@@ -107,3 +107,6 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 - Ventajas: Simplifica la lógica de pagos al no necesitar clases adicionales.
 
 - Desventajas: Mezcla la lógica de negocio del cliente con la de pagos, lo que puede dificultar la separación de responsabilidades.
+
+
+Buscar como es llama la API de STRIPE.: https://docs.stripe.com/payments/charges-api?locale=es-ES
