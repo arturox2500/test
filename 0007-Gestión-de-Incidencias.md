@@ -14,12 +14,12 @@ Se requiere una solución para gestionar incidencias en el sistema que permita n
 
 ## Decision Drivers
 
-* RF-6: Gestor de incidencias
+* RF-6: Gestor de incidencias.
 
 ## Considered Options
 
-* 0007-1 - Implementación del patrón Publisher-Subscriber
-* 0007-2 - Creación de una clase de gestión de incidencias
+* 0007-1 - Implementación del patrón Publisher-Subscriber.
+* 0007-2 - Creación de una clase de gestión de incidencias.
 
 ## Decision Outcome
 
