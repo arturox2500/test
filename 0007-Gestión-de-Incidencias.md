@@ -1,8 +1,9 @@
 ---
-status: {pending}
-date: {2024-11-09}
+status: {accepted}
+date: {2024-11-15}
 decision-makers: {Iván Gutiérrez González, Arturo Enrique Gutiérrez Mirandona}
-informed: {Elinne Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
+consulted: {Elinee Nathalie Freites Muñoz, Jorge Cimadevilla Aniz}
+informed: {Víctor Bartolomé Letosa, Alejandro Valor González}
 ---
 
 # Gestión de Incidencias
