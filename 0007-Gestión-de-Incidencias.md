@@ -10,51 +10,42 @@ informed: {Víctor Bartolomé Letosa, Alejandro Valor González}
 
 ## Context and Problem Statement
 
-Se requiere una solución para gestionar las incidencias en el sistema de manera eficiente, permitiendo a los administradores reportar y redireccionar incidencias cuando sea necesario.
+Se requiere una solución para gestionar incidencias en el sistema que permita notificar rápidamente a los gestores de rutas sobre problemas que puedan afectar la operación (como averías de camiones o repartos no realizados).
 
 ## Decision Drivers
 
-* RF-6: Funcionalidad de gestor de incidencias para reportar y redireccionar problemas.
-* RF-6.1: Necesidad de contactar con un equipo especializado en caso de incidencias complejas.
-* RF-6.2: Comunicación con el cliente para notificar la resolución de la incidencia.
+* RF-6: #LLENAR LUEGO#
 
 ## Considered Options
 
-* 0007-1 - Implementación del patrón Observer para notificaciones de cambios en las incidencias.
-* 0007-2 - Uso de una clase de gestión de incidencias con métodos especializados.
-* 0007-3 - Implementación del patrón Chain of Responsibility junto con una clase de gestión de incidencias
+* 0007-1 - Implementación del patrón Publisher-Subscriber
+* 0007-2 - Creación de una clase de gestión de incidencias
 
 ## Decision Outcome
 
-Chosen option: 0007-3 - Implementación del patrón Chain of Responsibility junto con una clase IncidenciasManager.
+Chosen option: 0007-1 - Clase de gestión de incidencias que notifica directamente a la clase de gestión de rutas.
 
 ### Consequences
 
-* Good, porque el patrón Chain of Responsibility permite gestionar y redirigir incidencias de forma flexible, asignando cada tipo al equipo adecuado según su gravedad.
-* Good, porque la clase IncidenciasManager centraliza las notificaciones de resolución de incidencias, facilitando la comunicación con los usuarios.
-* Bad, porque una mala estructuración de la cadena de manejadores podría generar redundancias en la gestión, afectando la eficiencia.
+* Good, porque una clase dedicada permite un control directo y sencillo de la comunicación, manteniendo la simplicidad.
+* Good, porque facilita el mantenimiento al centralizar la lógica de notificación en una clase.
+* Bad, porque limita la flexibilidad para agregar otros módulos que podrían beneficiarse de recibir notificaciones de incidencias.
 
 ### Confirmation
 
-La implementación será verificada mediante pruebas unitarias y de integración para asegurar que el patrón Chain of Responsibility maneja correctamente las redirecciones de incidencias y que la clase IncidenciasManager gestiona correctamente la comunicación con los usuarios.
+La implementación será verificada mediante pruebas unitarias para asegurar que la clase de incidencias se comunica correctamente con la clase de gestión de rutas.
 
 ## Pros and Cons of the Options
 
-### 0007-1 - Implementación del patrón Observer para notificaciones de cambios en las incidencias
+### 0007-1 - Clase de gestión de incidencias con métodos directos para notificar a la clase de rutas
 
-* Good, because permite enviar notificaciones automáticas a los componentes interesados en los cambios de estado de las incidencias.
-* Good, because separa la gestión de incidencias de los componentes que las reciben, brindando mayor flexibilidad.
-* Bad, because aumenta la complejidad del sistema al requerir la gestión de observadores y notificaciones.
+* Good, because la comunicación directa con la clase de rutas simplifica el diseño.
+* Good, because centraliza el control de las notificaciones, facilitando la gestión y el mantenimiento.
+* Bad, because limita la capacidad de escalar la notificación a otros componentes que podrían beneficiarse de recibir información sobre incidencias.
 
+### 0007-2 -  Implementación del patrón Publisher-Subscriber
 
-### 0007-2 - Uso de una clase de gestión de incidencias con métodos especializados
+* Good, because el patrón Publisher-Subscriber permite que múltiples servicios o clases se suscriban a las notificaciones de incidencias sin modificar la lógica central.
+* Good, because facilita una arquitectura más extensible, permitiendo que en el futuro otros módulos puedan recibir alertas de incidencias.
+* Bad, because añade complejidad en la gestión de suscriptores y en la configuración inicial del patrón.
 
-* Good, because centraliza la gestión de incidencias y facilita el mantenimiento.
-* Good, because permite implementar métodos específicos para reportar y redireccionar incidencias sin añadir complejidad.
-* Bad, because puede requerir modificaciones futuras para adaptarse a mayores volúmenes de incidencias.
-
-### 0007-3 - Implementación del patrón Chain of Responsibility junto con una clase de gestión de incidencias
-
-* Good, because Chain of Responsibility permite gestionar incidencias de manera flexible y escalable, redirigiéndolas según el tipo sin cambiar la lógica central.
-* Good, because IncidenciasManager centraliza las notificaciones a los usuarios sobre la resolución de incidencias.
-* Bad, because demasiados manejadores pueden complicar el flujo y afectar la eficiencia, especialmente con incidencias complejas.
