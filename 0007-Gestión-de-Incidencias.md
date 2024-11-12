@@ -10,11 +10,11 @@ informed: {Víctor Bartolomé Letosa, Alejandro Valor González}
 
 ## Context and Problem Statement
 
-Se requiere una solución para gestionar incidencias en el sistema que permita notificar rápidamente a los gestores de rutas sobre problemas que puedan afectar la operación (como averías de camiones o repartos no realizados).
+Se requiere una solución para gestionar incidencias en el sistema que permita notificar rápidamente a los gestores de rutas sobre problemas que puedan afectar la operación (camión averiado, reparto no realizado y reparto realizado).
 
 ## Decision Drivers
 
-* RF-6: #LLENAR LUEGO#
+* RF-6: Gestor de incidencias
 
 ## Considered Options
 
