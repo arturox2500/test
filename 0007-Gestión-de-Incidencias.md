@@ -23,13 +23,13 @@ Se requiere una solución para gestionar incidencias en el sistema que permita n
 
 ## Decision Outcome
 
-Chosen option: 0007-1 - Creación de una clase de gestión de incidencias, because permite una comunicación directa y sencilla con la clase de gestión de rutas sin agregar complejidad innecesaria al sistema.
+Chosen option: 0007-1 - Creación de una clase de gestión de incidencias, because Permite una comunicación directa y sencilla con la clase de gestión de rutas sin agregar complejidad innecesaria al sistema.
 
 ### Consequences
 
-* Good, because una clase dedicada permite un control directo y sencillo de la comunicación, manteniendo la simplicidad.
-* Good, because facilita el mantenimiento al centralizar la lógica de notificación en una clase.
-* Bad, because limita la flexibilidad para agregar otros módulos que podrían beneficiarse de recibir notificaciones de incidencias.
+* Good, because Una clase dedicada permite un control directo y sencillo de la comunicación, manteniendo la simplicidad.
+* Good, because Facilita el mantenimiento al centralizar la lógica de notificación en una clase.
+* Bad, because Limita la flexibilidad para agregar otros módulos que podrían beneficiarse de recibir notificaciones de incidencias.
 
 ### Confirmation
 
@@ -39,13 +39,13 @@ La implementación será verificada mediante pruebas unitarias para asegurar que
 
 ### 0007-1 - Clase de gestión de incidencias con métodos directos para notificar a la clase de rutas
 
-* Good, because la comunicación directa con la clase de rutas simplifica el diseño.
-* Good, because centraliza el control de las notificaciones, facilitando la gestión y el mantenimiento.
-* Bad, because limita la capacidad de escalar la notificación a otros componentes que podrían beneficiarse de recibir información sobre incidencias.
+* Good, because La comunicación directa con la clase de rutas simplifica el diseño.
+* Good, because Centraliza el control de las notificaciones, facilitando la gestión y el mantenimiento.
+* Bad, because Limita la capacidad de escalar la notificación a otros componentes que podrían beneficiarse de recibir información sobre incidencias.
 
-### 0007-2 -  Implementación del patrón Publisher-Subscriber
+### 0007-2 - Implementación del patrón Publisher-Subscriber
 
-* Good, because el patrón Publisher-Subscriber permite que múltiples servicios o clases se suscriban a las notificaciones de incidencias sin modificar la lógica central.
-* Good, because facilita una arquitectura más extensible, permitiendo que en el futuro otros módulos puedan recibir alertas de incidencias.
-* Bad, because añade complejidad en la gestión de suscriptores y en la configuración inicial del patrón.
+* Good, because El patrón Publisher-Subscriber permite que múltiples servicios o clases se suscriban a las notificaciones de incidencias sin modificar la lógica central.
+* Good, because Facilita una arquitectura más extensible, permitiendo que en el futuro otros módulos puedan recibir alertas de incidencias.
+* Bad, because Añade complejidad en la gestión de suscriptores y en la configuración inicial del patrón.
 

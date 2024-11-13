@@ -18,40 +18,38 @@ El problema se describe como la necesidad de ejecutar todos los microservicios u
 
 ## Considered Options
 
-* {title of option 1}
-* {title of option 2}
-* {title of option 3}
+* 0009-1-Azure Kubernetes Services
+* 0009-2-Red Hat OpenShift
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Chosen option: 0009-1-Azure Kubernetes Services, because Posee un factor de seguridad y costes reducidos mayor a las demás opciones.
 
 ### Consequences
 
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
+* Good, because Optimiza costes ahorrando recursos inactivos.
+* Good, because Provee un acceso seguro.
+* Bad, because Implica una curva de aprendizaje inicial.
 
 ### Confirmation
 
-{Describe how the implementation of/compliance with the ADR can/will be confirmed. Is the chosen design and its implementation in line with the decision? E.g., a design/code review or a test with a library such as ArchUnit can help validate this. Note that although we classify this element as optional, it is included in many ADRs.}
+Aunque hay muchos tipos de plataformas para el despliegue de microservicios diferenciándose sobre todo en qué tipo de entornos trabaja (Amazon, Google, Microsoft, etc.), dado que no se nos implica un entorno en concreto lo más diferenciante sería la seguridad y el bajo coste.
 
 ## Pros and Cons of the Options
 
-### {title of option 1}
+### 0009-1-Azure Kubernetes Services
 
-{example | description | pointer to more information | …}
+Azure Kubernetes Services es una plataforma implementada por Microsoft y gestionada en Azure.
 
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
+* Good, because Optimiza costes ahorrando recursos inactivos.
+* Good, because Provee un acceso seguro.
+* Bad, because Implica una curva de aprendizaje inicial.
 
-### {title of other option}
+### 0009-2-Red Hat OpenShift
 
-{example | description | pointer to more information | …}
+Red Hat OpenShift es una plataforma de ejecución de microservicios (contenedores) basada en Kubernetes.
 
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
+* Good, because Permite un despliegue en múltiples entornos como hibrido o en servidores remotos.
+* Good, because Permite una mayor flexibilidad y escalabilidad, sobre todo para empresas grandes.
+* Neutral, because Provee una acceso seguro pero de menor calidad.
+* Bad, because Implica grandes costes en comparación a otras plataformas.
