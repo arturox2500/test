@@ -23,7 +23,7 @@ Se requiere una solución para gestionar incidencias en el sistema que permita n
 
 ## Decision Outcome
 
-Chosen option: 0007-1 - Creación de una clase de gestión de incidencias, because Permite una comunicación directa y sencilla con la clase de gestión de rutas sin agregar complejidad innecesaria al sistema.
+Chosen option: 0007-2 - Creación de una clase de gestión de incidencias, because Permite una comunicación directa y sencilla con la clase de gestión de rutas sin agregar complejidad innecesaria al sistema.
 
 ### Consequences
 
@@ -38,12 +38,14 @@ La implementación será verificada mediante pruebas unitarias para asegurar que
 ## Pros and Cons of the Options
 
 ### 0007-1 - Clase de gestión de incidencias con métodos directos para notificar a la clase de rutas
+Permite que múltiples componentes se suscriban para recibir notificaciones de incidencias de forma extensible.
 
 * Good, because La comunicación directa con la clase de rutas simplifica el diseño.
 * Good, because Centraliza el control de las notificaciones, facilitando la gestión y el mantenimiento.
 * Bad, because Limita la capacidad de escalar la notificación a otros componentes que podrían beneficiarse de recibir información sobre incidencias.
 
 ### 0007-2 - Implementación del patrón Publisher-Subscriber
+Proporciona una comunicación directa y simplificada con la clase de gestión de rutas, manteniendo el sistema sencillo.
 
 * Good, because El patrón Publisher-Subscriber permite que múltiples servicios o clases se suscriban a las notificaciones de incidencias sin modificar la lógica central.
 * Good, because Facilita una arquitectura más extensible, permitiendo que en el futuro otros módulos puedan recibir alertas de incidencias.
