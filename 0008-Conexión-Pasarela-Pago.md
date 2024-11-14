@@ -31,7 +31,7 @@ Chosen option: 0008-1-Utilización de Setup Intents API, because Nos permite el 
 
 * Good, because Permite guardar el método del pago del cliente.
 * Good, because Es ideal para pagos recurrentes.
-* Neutral, because Posee una alta compatibilidad y seguridad.
+* Good, because Posee una alta compatibilidad y seguridad.
 * Bad, because Conlleva una complejidad extra al no realizar el cargo inicial.
 
 ### Confirmation
@@ -46,7 +46,7 @@ La Setup Intents API está diseñada para guardar métodos de pago de manera seg
 
 * Good, because Permite guardar el método del pago del cliente.
 * Good, because Es ideal para pagos recurrentes.
-* Neutral, because Posee una alta compatibilidad y seguridad.
+* Good, because Posee una alta compatibilidad y seguridad.
 * Bad, because Conlleva una complejidad extra al no realizar el cargo inicial.
 
 ### 0008-2-Utilización de Stripe Checkout
