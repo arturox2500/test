@@ -15,7 +15,7 @@ Este problema se basa en la necesidad de gestionar los productos de la manera m�
 ## Decision Drivers
 
 * 0010-1 Creación de una clase ProductManager.
-* 0010-1 
+* 0010-2 Patrón Facade.
 
 ## Considered Options
 
@@ -26,37 +26,35 @@ Este problema se basa en la necesidad de gestionar los productos de la manera m�
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Chosen option: 0010-1 Creación de una clase ProductManager, because centraliza la lógica de productos y es la solución más sencilla de implementar y diseñar.
 
 ### Consequences
 
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
+* Good, because Centraliza la lógica de los productos.
+* Good, because Facilita el diseño y su implementación.
+* Bad, because Permite una escasa escalabilidad.
 
 ### Confirmation
 
-{Describe how the implementation of/compliance with the ADR can/will be confirmed. Is the chosen design and its implementation in line with the decision? E.g., a design/code review or a test with a library such as ArchUnit can help validate this. Note that although we classify this element as optional, it is included in many ADRs.}
+Como se ha mencionado antes, esta es la solución más óptima para este problema, aunque el patrón Facade sería una buena opción e incluso la opción ideal si se buscará una mayor escalabilidad para estas funcionalidades.
 
 ## Pros and Cons of the Options
 
-### {title of option 1}
+### 0010-1 Creación de una clase ProductManager.
 
-{example | description | pointer to more information | …}
+Esta solución se basa en la creación de una clase para interferir en todas las acciones referentes a los productos.
 
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
+* Good, because Centraliza la lógica de los productos.
+* Good, because Facilita el diseño y su implementación.
+* Bad, because Permite una escasa escalabilidad.
 
-### {title of other option}
+### 0010-2 Patrón Facade.
 
-{example | description | pointer to more information | …}
+Este patrón se basa en la creación de una interfaz, a la accede el usuario, que se encarga de, según qué acción, llamará a una clase o a otra.
 
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
+* Good, because Facilita la expansión.
+* Good, because Conlleva una interfaz simplificada para acceder a las funcionalidades de los productos.
+* Bad, because Complica innecesariamente el diseño e implementación.
 
 ## More Information
 
