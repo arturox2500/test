@@ -34,7 +34,7 @@ Chosen option: 0009-2: Kong Gateway, because proporciona flexibilidad, una integ
 
 ### Confirmation  
 
-Aunque AWS API Gateway ofrece beneficios como integración directa con servicios de Amazon, el uso de AKS como plataforma base favorece una solución más flexible como Kong Gateway, ya que este está optimizado para arquitecturas híbridas y Kubernetes nativo, además de ser compatible con entornos multiplataforma.  
+El uso de AKS como plataforma base favorece una solución más flexible como Kong Gateway, ya que este está optimizado para arquitecturas híbridas y Kubernetes nativo, además de ser compatible con entornos multiplataforma.  
 
 ## Pros and Cons of the Options  
 
