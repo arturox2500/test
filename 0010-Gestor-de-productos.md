@@ -14,15 +14,15 @@ Este problema se basa en la necesidad de gestionar los productos de la manera m�
 
 ## Decision Drivers
 
-* 0010-1 Creación de una clase ProductManager.
-* 0010-2 Patrón Facade.
-
-## Considered Options
-
 * RF-10: Gestor de productos.
 * RF-10.1: Gestor de precios y ofertas.
 * RF-10.2: Gestor de inventario.
 * RF-10.3: Gestor de pedidos a fábrica/almacén.
+
+## Considered Options
+
+* 0010-1 Creación de una clase ProductManager.
+* 0010-2 Patrón Facade.
 
 ## Decision Outcome
 
