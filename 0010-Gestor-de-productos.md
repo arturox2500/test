@@ -50,7 +50,7 @@ Esta solución se basa en la creación de una clase para interferir en todas las
 
 ### 0010-2 Patrón Facade.
 
-Este patrón se basa en la creación de una interfaz, a la accede el usuario, que se encarga de, según qué acción (relacionada con precios o ventas, inventario o temas relacionado con el almacen), llamará a una clase o a otra.
+Este patrón se basa en la creación de una interfaz, a la accede el usuario, que se encarga de, según qué acción (relacionada con precios o ventas, inventario o temas relacionado con el almacén), llamará a una clase o a otra.
 
 * Good, because Facilita la expansión.
 * Good, because Conlleva una interfaz simplificada para acceder a las funcionalidades de los productos.
